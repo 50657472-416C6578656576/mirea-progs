@@ -14,9 +14,7 @@ include("../basics.jl")
 # Аналогично move!, но маркирует (немаркированные) клетки по дороге.
 function go_and_mark!(r, side)
     move!(r, side)
-    if ismarker(r) == false
-        putmarker!(r)
-    end
+    putmarker!(r)
  end
  
  # Двигает робота до границы поля в сторону side, маркируя клетки по пути, после чего возвращает его в точку старта.
@@ -36,3 +34,27 @@ function go_and_mark!(r, side)
      putmarker!(r)
      show(r)
  end
+
+
+"""
+        Cлучай, когда изначально в некоторых клетках поля могут находиться маркеры.
+"""
+
+# Работает не только с маркерами, но и барьерами
+function solve_problem_1_wth_barriers_and_markers!(r)
+    visited = Set()
+    M, N = field_size(r)
+    I, J = coordinates(r)
+    cells = Set()
+
+    for i in 1:M
+        push!(cells, (i, J))
+    end
+    for j in 1:N
+        push!(cells, (I, j))
+    end
+
+    mark_some_cells_with_dfs!(r, visited, (I, J), false, cells)
+    
+    show(r)
+end

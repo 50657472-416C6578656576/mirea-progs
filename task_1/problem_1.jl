@@ -19,8 +19,6 @@ function go_and_mark!(r, side)
     end
  end
  
- opposite_side(side) = HorizonSide((Int(side) + 2) % 4)     # Возвращает противоположную передаваемой сторону.
- 
  # Двигает робота до границы поля в сторону side, маркируя клетки по пути, после чего возвращает его в точку старта.
  function mark_till_border!(r, side)
      while isborder(r, side) == 0
@@ -31,8 +29,8 @@ function go_and_mark!(r, side)
      end
  end
  
- function solve_problem_1_1!(r)
-     for side in [Nord, Ost, Sud, West]
+ function solve_problem_1!(r)
+    for side in [Nord, Ost, Sud, West]
         mark_till_border!(r, side)
      end
      putmarker!(r)

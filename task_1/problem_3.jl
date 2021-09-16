@@ -8,41 +8,35 @@ include("../basics.jl")
     РЕЗУЛЬТАТ: Робот - в исходном положении, и все клетки поля промакированы
 """
 
-# Двигается в переданную сторону до границы и возвращает пройденное расстояние
-function moveNcount_to_border!(r, side)
-    cnt = 1
-    while isborder(r, side) == 0
-        move!(r, side)
-        cnt += 1
+# "Поиск в глубину", робот проходится по всем клеткам и маркирует их
+function dfs!(r, visited, node, side)
+    is_not_at_start = side != false
+    if is_not_at_start
+        cheker = isborder(r, side) == false
+    else
+        cheker = true
     end
-    return cnt
-end
-move_to_corner_and_get_start!(r) = (moveNcount_to_border!(r, West), moveNcount_to_border!(r, Sud))  # Двигает робота в начальный угол и возвращает координаты страта
-
-opposite_side(side) = HorizonSide((Int(side) + 2) % 4)     # Возвращает противоположную передаваемой сторону.
-
-# Рекурсивно двигает робота по красивой спирали, по пути маркирую клетки
-function moveNfill(r, side)
-    is_actual = false
-    while isborder(r, side) == 0
-        putmarker!(r)
-        move!(r, side)
-        if ismarker(r) == 1
-            move!(r, opposite_side(side))
-            break
+    if (node in visited) == false && cheker
+        if is_not_at_start
+            move!(r, side)
         end
-        is_actual = true
-    end
-    if is_actual == false
+        putmarker!(r)
+        push!(visited, node)
+
+        for tempSide in [Nord, Ost, Sud, West]
+            if dfs!(r, visited, side_to_x_y(tempSide, node), tempSide)
+                move!(r, opposite_side(tempSide))
+            end
+        end
+        return true
+    else
         return false
     end
-    return moveNfill(r, HorizonSide((Int(side)+1)%4))
 end
 
+
 function solve_problem_3!(r)
-    x, y = move_to_corner_and_get_start!(r)
-    println(x, " ", y)
-    moveNfill(r, Ost)
-    move_to!(r, x, y)
+    visited = Set()
+    dfs!(r, visited, (0, 0), false)
     show(r)
 end

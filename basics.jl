@@ -1,6 +1,17 @@
 # Двигает робота до границы в переданную сторону
 function move_till_border!(r::Robot, side::HorizonSide)
+    steps = 0
     while isborder(r, side) == 0
+        move!(r, side)
+        steps += 1
+    end
+    return steps
+end
+
+
+# Двигает робота на {x} клеток в сторону {side}
+function move_for!(r::Robot, side::HorizonSide, x::Int)
+    for _ in 1:x
         move!(r, side)
     end
 end
@@ -23,8 +34,8 @@ opposite_side(side::HorizonSide) = HorizonSide((Int(side) + 2) % 4)     # Воз
 
 
 # Возвращает координаты клетки сверху/снизу/слева/справа от переданной
-function side_to_i_j(side::HorizonSide, node)
-    i, j = node
+function side_to_i_j(side::HorizonSide, cell)
+    i, j = cell
     if side == Nord
         return (i - 1, j)
     elseif side == Sud
@@ -42,7 +53,7 @@ field_size(r::Robot) = map(u_int -> Int(u_int), r.situation.frame_size)        #
 
 
 # "Поиск в глубину", робот проходится по всем клеткам и маркирует переданные в {cells}
-function mark_some_cells_with_dfs!(r, visited, node, side, cells)
+function mark_some_cells_with_dfs!(r, visited, cell, side, cells)
     is_not_at_start = side != false
 
     if is_not_at_start
@@ -51,19 +62,19 @@ function mark_some_cells_with_dfs!(r, visited, node, side, cells)
         cheker = true
     end
     
-    if (node in visited) == false && cheker
+    if (cell in visited) == false && cheker
         if is_not_at_start
             move!(r, side)
         end
-        push!(visited, node)
+        push!(visited, cell)
 
-        if node in cells
+        if cell in cells
             putmarker!(r)
-            println("!Marker at ", node)
+            println("!Marker at ", cell)
         end
 
         for tempSide in [Nord, Ost, Sud, West]
-            if mark_some_cells_with_dfs!(r, visited, side_to_i_j(tempSide, node), tempSide, cells)
+            if mark_some_cells_with_dfs!(r, visited, side_to_i_j(tempSide, cell), tempSide, cells)
                 move!(r, opposite_side(tempSide))
             end
         end

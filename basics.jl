@@ -62,7 +62,7 @@ function mark_some_cells_with_dfs!(r, visited, cell, side, cells)
         cheker = true
     end
     
-    if (cell in visited) == false && cheker
+    if (cell in visited) == false && cheker && length(cells) > 0
         if is_not_at_start
             move!(r, side)
         end
@@ -71,6 +71,7 @@ function mark_some_cells_with_dfs!(r, visited, cell, side, cells)
         if cell in cells
             putmarker!(r)
             println("!Marker at ", cell)
+            filter!(el -> el ≠ cell, cells)
         end
 
         for tempSide in [Nord, Ost, Sud, West]

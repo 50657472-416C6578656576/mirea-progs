@@ -32,6 +32,8 @@ end
 
 opposite_side(side::HorizonSide) = HorizonSide((Int(side) + 2) % 4)     # Возвращает противоположную передаваемой сторону.
 
+next_side(side::HorizonSide) = opposite_side(HorizonSide((Int(side) + 1) % 4))       # Возвращает следующую сторону от {side} по часовой стрелке
+
 
 # Возвращает координаты клетки сверху/снизу/слева/справа от переданной
 function side_to_i_j(side::HorizonSide, cell)

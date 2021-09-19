@@ -1,5 +1,14 @@
 # mirea-progs
 
+### Связанные ссылки
+- [Инструкция по организации процесса ...](https://github.com/Vibof/Organizer/blob/master/workorg.md)
+- [Справочная информация о git](https://github.com/Vibof/Organizer/blob/master/gitref.md)
+- [HorizonSideRobots.jl](https://github.com/Vibof/HorizonSideRobots.jl)
+
+
+---
+
+
 ### Содержание
 - [Задача 1](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_1)
 - [Задача 2](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_2)
@@ -15,12 +24,5 @@
 - [Задача 12](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_12)
 - [Задача 13](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_13)
 
+
 Process finished with exit code 0
-
-
----
-
-### Связанные ссылки
-- [Инструкция по организации процесса ...](https://github.com/Vibof/Organizer/blob/master/workorg.md)
-- [Справочная информация о git](https://github.com/Vibof/Organizer/blob/master/gitref.md)
-- [HorizonSideRobots.jl](https://github.com/Vibof/HorizonSideRobots.jl)

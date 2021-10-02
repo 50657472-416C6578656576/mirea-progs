@@ -25,7 +25,7 @@ function super_radial_search!(r)
     count = 0
     side = Nord
 
-    while move_for_x_or_find_marker!(r, side, x)
+    while super_move_for_x_or_find_marker!(r, side, x)
         count += 1
         side = next_side(side)
         if count % 2 == 0

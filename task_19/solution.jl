@@ -8,7 +8,7 @@ include("../basics.jl")
 
 
 # Двигает робота на {x} шагов или останавливается на маркере
-function move_for_x_or_find_marker!(r, side, x)
+function super_move_for_x_or_find_marker!(r, side, x)
     for _ in 1:x
         super_move!(r, side)
         if ismarker(r)
@@ -20,7 +20,7 @@ end
 
 
 # Двигает робота по спирали пока он не найдет маркер
-function radial_search!(r)
+function super_radial_search!(r)
     x = 1
     count = 0
     side = Nord
@@ -37,7 +37,7 @@ end
 
 
 function solve_19!(r)
-    radial_search!(r)
+    super_radial_search!(r)
 
     show(r)
 end

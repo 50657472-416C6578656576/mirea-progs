@@ -1,9 +1,10 @@
 # mirea-progs
 
 ### Связанные ссылки
+- [HorizonSideRobots.jl](https://github.com/Vibof/HorizonSideRobots.jl)
+- [Лекции и задачи](https://github.com/Vibof/ProgrammingManual)
 - [Инструкция по организации процесса ...](https://github.com/Vibof/Organizer/blob/master/workorg.md)
 - [Справочная информация о git](https://github.com/Vibof/Organizer/blob/master/gitref.md)
-- [HorizonSideRobots.jl](https://github.com/Vibof/HorizonSideRobots.jl)
 
 
 ---
@@ -23,6 +24,40 @@
 - [Задача 11](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_11)
 - [Задача 12](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_12)
 - [Задача 13](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_13)
-
-
-Process finished with exit code 0
+- [Задача 14](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_14)
+- [Задача 15](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_15)
+- [Задача 16](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_16)
+- [Задача 17](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_17)
+- [Задача 18](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_18)
+- [Задача 19](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_19)
+- [Задача 20](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_20)
+- [Задача 21](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_21)
+- [Задача 22](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_22)
+- [Задача 23](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_23)
+- [Задача 24](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_24)
+- [Задача 25](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_25)
+- [Задача 26](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_26)
+- [Задача 27](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_27)
+- [Задача 28](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_28)
+- [Задача 29](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_29)
+- [Задача 30](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_30)
+- [Задача 31](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_31)
+- [Задача 32](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_32)
+- [Задача 33](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_33)
+- [Задача 34](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_34)
+- [Задача 35](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_35)
+- [Задача 36](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_36)
+- [Задача 37](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_37)
+- [Задача 38](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_38)
+- [Задача 39](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_39)
+- [Задача 40](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_40)
+- [Задача 41](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_41)
+- [Задача 42](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_42)
+- [Задача 43](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_43)
+- [Задача 44](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_44)
+- [Задача 45](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_45)
+- [Задача 46](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_46)
+- [Задача 47](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_47)
+- [Задача 48](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_48)
+- [Задача 49](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_49)
+- 

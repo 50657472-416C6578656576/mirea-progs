@@ -1,3 +1,17 @@
+# using HorizonSideRobots
+"""
+Делает попытку шагнуть в сторону {side} и возвращает {false} при неудачной попытке, иначе {true}
+"""
+function carefull_move!(r::Robot, side::HorizonSide)
+    if !isborder(r, side)
+        move(r, side)
+        return true
+    else
+        return false
+    end
+end
+
+
 # Двигает робота до границы в переданную сторону
 function move_till_border!(r::Robot, side::HorizonSide)
     steps = 0
@@ -14,8 +28,11 @@ function move_for!(r::Robot, side::HorizonSide, x::Int)
     for _ in 1:x
         if !isborder(r, side)
             move!(r, side)
+        else
+            return false
         end
     end
+    return true
 end
 
 
@@ -96,39 +113,6 @@ end
 """
             Обход перегородок
 """
-# # Двигается вдоль перегородки со стороны {check_side} в сторону {side}
-# function move_while_border_at!(r, side, check_side)
-#     cnt = 0
-#     # isblocked = false
-#     while isborder(r, check_side) == 1
-#         if isborder(r, side) == 0
-#             return (cnt, true)
-#         end
-#         move!(r, side)
-#         cnt += 1
-#     end
-#     return (cnt, false)
-# end
-
-# # Двигается вдоль перегородки со стороны {border_side} в сторону {side} и проверяет есть ли там выход
-# function check_if_escape_or_border(r, side, border_side)
-#     cnt_1, isBlocked_1 = move_while_border_at!(r, side, border_side)
-#     move_for!(r, opposite_side(side), cnt_1)
-    
-#     return (!isBlocked_1, cnt_1)            # {!isblocked_1} == true - есть выход
-# end
-
-# # Проверяет границу на доступность обхода
-# function is_local_border(r, side)
-#     for t_side in (next_side(side), opposite_side(next_side(side)))
-#         isEscape, cnt = check_if_escape_or_border(r, t_side, side)
-#         if isEscape
-#             return (true, cnt, t_side)
-#         end
-#     end
-
-#     return (false, 0, side)
-# end
 
 
 # проверяет {x}-овую клетку в сторону {side} от места старта робота
@@ -169,3 +153,38 @@ function super_move!(r, side)
     end
     
 end
+
+
+# # Двигается вдоль перегородки со стороны {check_side} в сторону {side}
+# function move_while_border_at!(r, side, check_side)
+#     cnt = 0
+#     # isblocked = false
+#     while isborder(r, check_side) == 1
+#         if isborder(r, side) == 0
+#             return (cnt, true)
+#         end
+#         move!(r, side)
+#         cnt += 1
+#     end
+#     return (cnt, false)
+# end
+
+# # Двигается вдоль перегородки со стороны {border_side} в сторону {side} и проверяет есть ли там выход
+# function check_if_escape_or_border(r, side, border_side)
+#     cnt_1, isBlocked_1 = move_while_border_at!(r, side, border_side)
+#     move_for!(r, opposite_side(side), cnt_1)
+    
+#     return (!isBlocked_1, cnt_1)            # {!isblocked_1} == true - есть выход
+# end
+
+# # Проверяет границу на доступность обхода
+# function is_local_border(r, side)
+#     for t_side in (next_side(side), opposite_side(next_side(side)))
+#         isEscape, cnt = check_if_escape_or_border(r, t_side, side)
+#         if isEscape
+#             return (true, cnt, t_side)
+#         end
+#     end
+
+#     return (false, 0, side)
+# end

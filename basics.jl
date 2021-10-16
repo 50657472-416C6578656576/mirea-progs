@@ -270,7 +270,7 @@ end
 
 """Базовый абстрактный робот"""
 abstract type AbstractRobot end
-
+"""Определение стандартных функций робота для робота {::AbstractRobot}"""
 move!(robot::AbstractRobot, side::HorizonSide) = HorizonSideRobots.move!(get(robot), side)
 isborder(robot::AbstractRobot,  side::HorizonSide) = HorizonSideRobots.isborder(get(robot), side)
 putmarker!(robot::AbstractRobot) = HorizonSideRobots.putmarker!(get(robot))
@@ -278,6 +278,7 @@ ismarker(robot::AbstractRobot) = HorizonSideRobots.ismarker(get(robot))
 temperature(robot::AbstractRobot) = HorizonSideRobots.temperature(get(robot))
 show(robot::AbstractRobot) = HorizonSideRobots.show(get(robot))
 show!(robot::AbstractRobot) = HorizonSideRobots.show!(get(robot))
+"""Возвращает {nothing} для робота типа {AbstractRobot}"""
 get(robot::AbstractRobot) = nothing
 
 
@@ -317,7 +318,7 @@ struct PutMarkersBorderRobot <: AbstractBorderRobot
     robot::Robot
 end
 
-"""Возвращает ссылку на робота {::Robot}"""
+"""Возвращает ссылку на робота {::Robot} для робота типа {PutMarkersBorderRobot}"""
 get(r::PutMarkersBorderRobot) = r.robot
 
 """
@@ -358,7 +359,7 @@ struct SuperCheatRobot <: AbstractRobot
     end
 end
 
-"""Возвращает ссылку на робота {::Robot}"""
+"""Возвращает ссылку на робота {::Robot} для робота типа {SuperCheatRobot}"""
 get(robot::SuperCheatRobot) = robot.robot
 
 """Обновляет данные о текущей позиции {r.position} робота {r} (происходит вызов {get_field_size_and_position}!)"""
@@ -373,7 +374,7 @@ end
 
 """
 Переопределенная {move!(::Robot)}:
-                        + Изменяет текущии координаты робота {r} согласно перемещению
+                        + Изменяет текущие координаты робота {r} согласно перемещению
 """
 function move!(robot::SuperCheatRobot, side::HorizonSide)
     move!(robot.robot, side)

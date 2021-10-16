@@ -12,8 +12,7 @@ include("../basics.jl")
 
 
 function solve_12!(r, n)
-    I, J = coordinates(r)
-    M, N = field_size(r)
+    (M, N), (I, J) = get_field_size_and_position!(r)
     cells = Set()
     visited = Set()
     count = 0

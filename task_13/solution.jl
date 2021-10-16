@@ -2,7 +2,7 @@ using HorizonSideRobots
 include("../basics.jl")
 
 
-"""
+md"""
             ДАНО: Робот - в произвольной клетке ограниченного прямоугольной рамкой поля без внутренних перегородок и маркеров.
 
             РЕЗУЛЬТАТ: Робот - в исходном положении в центре косого креста (в форме X) из маркеров.
@@ -10,8 +10,7 @@ include("../basics.jl")
 
 
 function solve_13!(r)
-    I, J = coordinates(r)
-    M, N = field_size(r)
+    (M, N), (I, J) = get_field_size_and_position!(r)
     cells = Set()
     visited = Set()
 

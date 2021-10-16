@@ -8,8 +8,7 @@ include("../basics.jl")
 
 function solve_problem_14!(r)
     visited = Set()
-    M, N = field_size(r)
-    I, J = coordinates(r)
+    (M, N), (I, J) = get_field_size_and_position!(r)
     cells = Set()
 
     for i in 1:M

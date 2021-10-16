@@ -2,7 +2,7 @@ using HorizonSideRobots
 include("../basics.jl")
 
 
-"""
+md"""
             ДАНО: Робот - в юго-западном углу поля, на котором расставлено некоторое количество маркеров
 
             РЕЗУЛЬТАТ: Функция вернула значение средней температуры всех замаркированных клеток
@@ -48,7 +48,8 @@ end
 
 
 function solve_10!(r)
-    answer = count_some_temperature_with_dfs!(r, Set(), coordinates(r), false)
+    (M, N), (I, J) = get_field_size_and_position!(r)
+    answer = count_some_temperature_with_dfs!(r, Set(), (I, J), false)
     
     return Float64(answer[1] / answer[2])
 end

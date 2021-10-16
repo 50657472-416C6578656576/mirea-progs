@@ -2,7 +2,7 @@ using HorizonSideRobots
 include("../basics.jl")
 
 
-"""
+md"""
             ДАНО: Робот - в произвольной клетке ограниченного прямоугольного поля, на котором могут находиться также внутренние прямоугольные перегородки (все перегородки изолированы друг от друга, прямоугольники могут вырождаться в отрезки)
 
             РЕЗУЛЬТАТ: Робот - в исходном положении, и в 4-х приграничных клетках, две из которых имеют ту же широту, а две - ту же долготу, что и Робот, стоят маркеры.
@@ -10,8 +10,7 @@ include("../basics.jl")
 
 
 function solve_11!(r)
-    I, J = coordinates(r)
-    M, N = field_size(r)
-    mark_some_cells_with_dfs!(r, Set(), coordinates(r), false, [(I, 1), (1, J), (I, N), (M, J)])
+    (M, N), (I, J) = get_field_size_and_position!(r)
+    mark_some_cells_with_dfs!(r, Set(), (I, J), false, [(I, 1), (1, J), (I, N), (M, J)])
     show(r)
 end

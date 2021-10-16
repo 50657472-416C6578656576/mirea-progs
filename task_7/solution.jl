@@ -2,7 +2,7 @@ using HorizonSideRobots
 include("../basics.jl")
 
 
-"""
+md"""
         ДАНО: Робот - в произвольной клетке ограниченного прямоугольного поля (без внутренних перегородок)
 
         РЕЗУЛЬТАТ: Робот - в исходном положении, в клетке с роботом стоит маркер, и все остальные клетки поля промаркированы в шахматном порядке
@@ -10,8 +10,7 @@ include("../basics.jl")
 
 
 function solve_7!(r)
-    I, J = coordinates(r)
-    M, N = field_size(r)
+    (M, N), (I, J) = get_field_size_and_position!(r)
     visited = Set()
     cells = Set()
     
@@ -23,7 +22,7 @@ function solve_7!(r)
         end
     end
 
-    mark_some_cells_with_dfs!(r, visited, coordinates(r), false, cells)
+    mark_some_cells_with_dfs!(r, visited, (I, J), false, cells)
     
     show(r)
 end

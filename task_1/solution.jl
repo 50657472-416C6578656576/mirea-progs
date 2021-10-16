@@ -2,7 +2,7 @@ using HorizonSideRobots
 include("../basics.jl")
 
 
-"""
+md"""
     ДАНО: Робот находится в произвольной клетке ограниченного прямоугольного поля без внутренних перегородок и маркеров.
 
     РЕЗУЛЬТАТ: Робот — в исходном положении в центре прямого креста из маркеров, расставленных вплоть до внешней рамки.
@@ -43,8 +43,7 @@ function go_and_mark!(r, side)
 # Работает не только с маркерами, но и барьерами
 function solve_problem_1_wth_barriers_and_markers!(r)
     visited = Set()
-    M, N = field_size(r)
-    I, J = coordinates(r)
+    (M, N), (I, J) = get_field_size_and_position!(r)
     cells = Set()
 
     for i in 1:M

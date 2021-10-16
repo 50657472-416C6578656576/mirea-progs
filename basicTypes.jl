@@ -1,5 +1,20 @@
 include("./basics.jl")
 
+move!(robot::Robot, side::HorizonSide) = HorizonSideRobots.move!(robot, side)
+isborder(robot::Robot,  side::HorizonSide) = HorizonSideRobots.isborder(robot, side)
+putmarker!(robot::Robot) = HorizonSideRobots.putmarker!(robot)
+ismarker(robot::Robot) = HorizonSideRobots.ismarker(robot)
+temperature(robot::Robot) = HorizonSideRobots.temperature(robot)
+
+
+
+mutable struct Coordinates
+    i::Integer
+    j::Integer
+    Coordinates() = new(0,0) # - такой конструктор определен для удобства использования
+    Coordinates(i::Integer,j::Integer) = new(i,j)
+end
+
 
 #########################################################
 # Базовый абстрактный робот

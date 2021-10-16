@@ -1,4 +1,4 @@
-# using HorizonSideRobots
+using HorizonSideRobots
 """
 Делает попытку шагнуть в сторону {side} и возвращает {false} при неудачной попытке, иначе {true}
 """
@@ -53,6 +53,14 @@ opposite_side(side::HorizonSide) = HorizonSide((Int(side) + 2) % 4)     # Воз
 
 next_side(side::HorizonSide) = opposite_side(HorizonSide((Int(side) + 1) % 4))       # Возвращает следующую сторону от {side} по часовой стрелке
 
+function get_no_border_side(r)
+    for side in [Nord, Ost, Sud, West]
+        if !isborder(r, side)
+            return side
+        end
+    end
+    return false
+end
 
 # Возвращает координаты клетки сверху/снизу/слева/справа от переданной
 function side_to_i_j(side::HorizonSide, cell)

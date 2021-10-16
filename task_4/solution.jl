@@ -9,7 +9,7 @@ md"""
                 за исключением одной последней клетки на Востоке,следующий - за исключением двух последних клеток на Востоке, и т.д.
 """
 
-# Двигается в переданную сторону до границы и возвращает пройденное расстояние
+"""Двигается в переданную сторону до границы и возвращает пройденное расстояние"""
 function moveNcount_to_border!(r, side)
     cnt = 1
     while isborder(r, side) == 0
@@ -20,7 +20,7 @@ function moveNcount_to_border!(r, side)
 end
 move_to_corner_and_get_start!(r) = (moveNcount_to_border!(r, West), moveNcount_to_border!(r, Sud))  # Двигает робота в начальный угол и возвращает координаты страта
 
-# Двигаться на X шагов или до "упора" в сторону side
+"""Двигаться на {steps} шагов или до "упора" в сторону {side}"""
 function move_for_x!(r, side::HorizonSide, steps::Int)
     for _ in 1:steps
         if isborder(r, side)
@@ -32,7 +32,7 @@ function move_for_x!(r, side::HorizonSide, steps::Int)
     return true
 end
 
-# Двигает робота на steps клеток вверх, возвращается назад и двигается направо на одну клетку, если может.
+"""Двигает робота на {steps} клеток вверх, возвращается назад и двигается направо на одну клетку, если может."""
 function do_movements!(r, steps::Int)
     move_for_x!(r, Nord, steps)
     move_for_x!(r, Sud, steps)
@@ -45,7 +45,8 @@ function do_movements!(r, steps::Int)
 end
 
 
-function solve_problem_4!(r)
+ """Решение задачи 4"""
+ function solve_problem_4!(r)
     x, y = move_to_corner_and_get_start!(r)
     i = 0
     while do_movements!(r, i)

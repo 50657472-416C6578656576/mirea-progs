@@ -10,7 +10,8 @@ md"""
 """
 
 
-function solve_problem_5!(r)
+ """Решение задачи 5"""
+ function solve_problem_5!(r)
     visited = Set()
     (M, N), (I, J) = get_field_size_and_position!(r)
     mark_some_cells_with_dfs!(r, visited, (I, J), false, [(M, N), (1, N), (M, 1), (1, 1)])

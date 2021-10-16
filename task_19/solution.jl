@@ -7,7 +7,7 @@ md"""
 """
 
 
-# Двигает робота на {x} шагов или останавливается на маркере
+"""Двигает робота на {x} шагов или останавливается на маркере"""
 function super_move_for_x_or_find_marker!(r, side, x)
     for _ in 1:x
         super_move!(r, side)
@@ -19,7 +19,7 @@ function super_move_for_x_or_find_marker!(r, side, x)
 end
 
 
-# Двигает робота по спирали пока он не найдет маркер
+"""Двигает робота по спирали пока он не найдет маркер"""
 function super_radial_search!(r)
     x = 1
     count = 0
@@ -36,7 +36,8 @@ function super_radial_search!(r)
 end
 
 
-function solve_19!(r)
+ """Решение задачи 19"""
+ function solve_19!(r)
     super_radial_search!(r)
 
     show(r)

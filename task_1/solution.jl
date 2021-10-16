@@ -11,13 +11,13 @@ md"""
 """
 
 
-# Аналогично move!, но маркирует (немаркированные) клетки по дороге.
+"""Аналогично {move!}, но маркирует (немаркированные) клетки по дороге."""
 function go_and_mark!(r, side)
     move!(r, side)
     putmarker!(r)
  end
  
- # Двигает робота до границы поля в сторону side, маркируя клетки по пути, после чего возвращает его в точку старта.
+ """Двигает робота до границы поля в сторону {side}, маркируя клетки по пути, после чего возвращает его в точку старта"""
  function mark_till_border!(r, side)
      while isborder(r, side) == 0
          go_and_mark!(r, side)
@@ -27,6 +27,7 @@ function go_and_mark!(r, side)
      end
  end
  
+  """Решение задачи 1"""
  function solve_problem_1!(r)
     for side in [Nord, Ost, Sud, West]
         mark_till_border!(r, side)
@@ -36,12 +37,12 @@ function go_and_mark!(r, side)
  end
 
 
-"""
+md"""
         Cлучай, когда изначально в некоторых клетках поля могут находиться маркеры.
 """
 
-# Работает не только с маркерами, но и барьерами
-function solve_problem_1_wth_barriers_and_markers!(r)
+"""Решение задачи 1; работает не только с маркерами, но и барьерами"""
+ function solve_problem_1_wth_barriers_and_markers!(r)
     visited = Set()
     (M, N), (I, J) = get_field_size_and_position!(r)
     cells = Set()

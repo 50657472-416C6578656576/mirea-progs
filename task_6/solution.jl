@@ -10,7 +10,7 @@ md"""
 """
 
 
-# Приводит робота к прямоугольнику
+"""Приводит робота к прямоугольнику"""
 function find_the_square!(r)
     (M, N), (I, J) = r.field_size, position(r)
     for side in [Nord, Sud, West, Ost]
@@ -26,7 +26,7 @@ function find_the_square!(r)
 end
 
 
-# Возвращает сторону в которой есть барьер
+"""Возвращает сторону в которой есть барьер"""
 function where_is_border(r)
     for side in [Nord, Sud, West, Ost]
         if isborder(r, side)
@@ -37,7 +37,7 @@ function where_is_border(r)
 end
 
 
-# Маркирует внешний периметр всего прямоугольника, рядом с которым находится
+"""Маркирует внешний периметр всего прямоугольника, рядом с которым находится"""
 function mark_whole_daBorder!(r)
     border_side = where_is_border(r)
     side = HorizonSide((Int(border_side) + 1) % 4)
@@ -63,7 +63,8 @@ function mark_whole_daBorder!(r)
 end
 
 
-function solve_6!(r)
+ """Решение задачи 6"""
+ function solve_6!(r)
     r = SuperCheatRobot(r)
     x, side = find_the_square!(r)
     mark_whole_daBorder!(r)

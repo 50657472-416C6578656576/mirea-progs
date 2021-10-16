@@ -9,7 +9,7 @@ md"""
 """
 
 
-# "Поиск в глубину", робот проходится по всем клеткам и возвращает пару значений: (сумма температур на маркированных клетках, их кол-во)
+"""Поиск в глубину, робот проходится по всем клеткам и возвращает пару значений: (сумма температур на маркированных клетках, их кол-во)"""
 function count_some_temperature_with_dfs!(r, visited, cell, side, COUNT=0, SUM=0)
     is_not_at_start = side != false
 
@@ -47,7 +47,8 @@ function count_some_temperature_with_dfs!(r, visited, cell, side, COUNT=0, SUM=0
 end
 
 
-function solve_10!(r)
+ """Решение задачи 10"""
+ function solve_10!(r)
     (M, N), (I, J) = get_field_size_and_position!(r)
     answer = count_some_temperature_with_dfs!(r, Set(), (I, J), false)
     

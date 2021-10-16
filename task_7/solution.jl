@@ -9,7 +9,8 @@ md"""
 """
 
 
-function solve_7!(r)
+ """Решение задачи 7"""
+ function solve_7!(r)
     (M, N), (I, J) = get_field_size_and_position!(r)
     visited = Set()
     cells = Set()

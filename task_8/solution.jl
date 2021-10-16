@@ -9,7 +9,8 @@ md"""
             РЕЗУЛЬТАТ: Робот - в клетке под проходом
 """
 
-function solve_8!(r)
+ """Решение задачи 8"""
+ function solve_8!(r)
     escape_find(r, Nord)
     show(r)
 end

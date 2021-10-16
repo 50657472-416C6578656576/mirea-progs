@@ -9,7 +9,8 @@ md"""
 """
 
 
-function solve_11!(r)
+ """Решение задачи 11"""
+ function solve_11!(r)
     (M, N), (I, J) = get_field_size_and_position!(r)
     mark_some_cells_with_dfs!(r, Set(), (I, J), false, [(I, 1), (1, J), (I, N), (M, J)])
     show(r)

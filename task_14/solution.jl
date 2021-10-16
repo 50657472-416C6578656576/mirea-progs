@@ -1,7 +1,7 @@
 using HorizonSideRobots
 include("../basics.jl")
 
-"""
+md"""
         task_1, но с перегородками
 """
 

@@ -11,6 +11,7 @@
 
 
 ### Содержание
+- ['Библиотека' с базовыми функциями, классами и структурами](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/basics.jl)
 - [Задача 1](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_1)
 - [Задача 2](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_2)
 - [Задача 3](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_3)

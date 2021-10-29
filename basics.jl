@@ -193,15 +193,16 @@ function try_move!(r::Robot, side::HorizonSide)
             move!(r, ort_side)
             n+=1
         else
+            move_for!(r, opposite_side(ort_side), n)
             return false
         end
     end
 
     move!(r, side)
-    while isborder(r, opposite_side(next_side))
+    while isborder(r, opposite_side(ort_side))
         move!(r, side)
     end
-    move_for!(r, opposite_side(next_side), n)
+    move_for!(r, opposite_side(ort_side), n)
     return true
 end
 

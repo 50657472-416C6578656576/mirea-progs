@@ -10,7 +10,7 @@ md"""
 """
 function carefull_move!(r::Robot, side::HorizonSide)
     if !isborder(r, side)
-        move(r, side)
+        move!(r, side)
         return true
     else
         return false
@@ -43,6 +43,31 @@ function move_for!(r, side::HorizonSide, x::Int)
         end
     end
     return true
+end
+
+
+"""
+Перемещает робота в угол ({side_1}, {side_2}) и возвращает проделанный при этом путь {path}
+"""
+function move_to_corner!(r, side_1::HorizonSide, side_2::HorizonSide,)
+    path = []
+    while !isborder(r, side_1) || !isborder(r, side_2)
+        push!(path, move_till_border!(r, side_1))
+        push!(path, move_till_border!(r, side_2))
+    end
+    return path
+end
+
+"""
+Перемещает робота из угла в стартовую позицию по {back_path}
+"""
+function move_back_from_corner!(r, side_1, side_2, back_path)
+    side_1 = opposite_side(side_1)
+    side_2 = opposite_side(side_2)
+    for i in 1:2:size(back_path)[1]
+        move_for!(r, side_2, back_path[i])
+        move_for!(r, side_1, back_path[i+1])
+    end
 end
 
 

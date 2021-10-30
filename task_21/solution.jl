@@ -16,7 +16,6 @@ function count_borders_inline_at!(r, side, border_side)
     while cond
         if !is_under_border && isborder(r, border_side)
             counter+=1
-            println("+1")
             is_under_border = true
         elseif !isborder(r, border_side)
             is_under_border = false
@@ -28,13 +27,14 @@ end
 
 
 """
+Считает количество линейных перегородок в стороне {border_side}
 """
 function count_linear_borders_at!(r, border_side)
     counter = 0    
     while !isborder(r, border_side)
         counter += count_borders_inline_at!(r, next_side(border_side), border_side)
         carefull_move!(r, border_side)
-        if !isborder(r, Nord)
+        if !isborder(r, border_side)
             counter += count_borders_inline_at!(r, previous_side(border_side), border_side)
             carefull_move!(r, border_side)
         end

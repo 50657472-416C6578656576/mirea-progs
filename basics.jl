@@ -186,24 +186,29 @@ end
 
 """Обходит любую одинарную прямоугольную перегородку в стороне {side}"""
 function try_move!(r::Robot, side::HorizonSide)
-    n = 0;
-    ort_side = next_side(side)
-    while isborder(r, side)
-        if !isborder(r, ort_side)
-            move!(r, ort_side)
-            n+=1
-        else
-            move_for!(r, opposite_side(ort_side), n)
-            return false
+    if isborder(r, side)
+        n = 0;
+        ort_side = next_side(side)
+        while isborder(r, side)
+            if !isborder(r, ort_side)
+                move!(r, ort_side)
+                n+=1
+            else
+                move_for!(r, opposite_side(ort_side), n)
+                return false
+            end
         end
-    end
 
-    move!(r, side)
-    while isborder(r, opposite_side(ort_side))
         move!(r, side)
+        while isborder(r, opposite_side(ort_side))
+            move!(r, side)
+        end
+        move_for!(r, opposite_side(ort_side), n)
+        return true
+    else
+        move!(r, side)
+        return true
     end
-    move_for!(r, opposite_side(ort_side), n)
-    return true
 end
 
 

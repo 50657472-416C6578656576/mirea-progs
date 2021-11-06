@@ -1,15 +1,5 @@
 # mirea-progs
 
-### Связанные ссылки
-- [Лекции и задачи](https://github.com/Vibof/ProgrammingManual)
-- [HorizonSideRobots.jl](https://github.com/Vibof/HorizonSideRobots.jl)
-- [Инструкция по организации процесса ...](https://github.com/Vibof/Organizer/blob/master/workorg.md)
-- [Справочная информация о git](https://github.com/Vibof/Organizer/blob/master/gitref.md)
-
----
-
-
-
 ### Содержание
 - [Материалы с лекций](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/stuff/lectures/)
 - [Материалы с семинаров](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/stuff/pracs/)
@@ -63,3 +53,13 @@
 - [Задача 47](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_47)
 - [Задача 48](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_48)
 - [Задача 49](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_49)
+
+---
+
+
+
+### Связанные ссылки
+- [Лекции и задачи](https://github.com/Vibof/ProgrammingManual)
+- [HorizonSideRobots.jl](https://github.com/Vibof/HorizonSideRobots.jl)
+- [Инструкция по организации процесса ...](https://github.com/Vibof/Organizer/blob/master/workorg.md)
+- [Справочная информация о git](https://github.com/Vibof/Organizer/blob/master/gitref.md)

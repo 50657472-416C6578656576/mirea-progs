@@ -11,6 +11,8 @@
 
 
 ### Содержание
+- [Материалы с лекций](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/stuff/lectures/)
+- [Материалы с семинаров](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/stuff/pracs/)
 - [Базовые основы фундамента ("библиотека")](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/basics.jl)
 - [Задача 1](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_1)
 - [Задача 2](https://github.com/50657472-416C6578656576/mirea-progs/tree/main/task_2)

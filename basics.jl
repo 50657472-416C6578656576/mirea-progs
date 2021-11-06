@@ -212,6 +212,44 @@ function try_move!(r::Robot, side::HorizonSide)
 end
 
 
+"""
+Обходит любую одинарную прямоугольную перегородку в стороне {side}
+Возвращает:
+        {-1} - преград нет
+         {0} - неудача
+         {1} - перегородка линейна
+         {2} - перегородка прямоугольна
+"""
+function try_move_extra!(r::Robot, side::HorizonSide)
+    result = 0
+    if isborder(r, side)
+        n = 0;
+        ort_side = next_side(side)
+        while isborder(r, side)
+            if !isborder(r, ort_side)
+                move!(r, ort_side)
+                n+=1
+            else
+                move_for!(r, opposite_side(ort_side), n)
+                return result
+            end
+        end
+
+        move!(r, side)
+        while isborder(r, opposite_side(ort_side))
+            result = 1
+            move!(r, side)
+        end
+        move_for!(r, opposite_side(ort_side), n)
+        result += 1
+    else
+        move!(r, side)
+        result = -1
+    end
+    return result
+end
+
+
 """Посещает все доступные клетки и возвращет {ans}, имеющий значение соответствующее {[i_min, i_max, j_min, j_max]}"""
 function visit_all_cells!(r, side=Nord, cell=(0, 0), visited=Set(), ans=[0, 0, 0, 0,])
 
